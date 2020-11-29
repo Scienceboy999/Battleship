@@ -1,0 +1,135 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://Assetts/Theme/defaultTheme.tres" type="Theme" id=1]
+[ext_resource path="res://Lobby/Lobby.gd" type="Script" id=2]
+[ext_resource path="res://Lobby/WaitingRoom.tscn" type="PackedScene" id=3]
+
+[node name="Lobby" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme = ExtResource( 1 )
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+color = Color( 0.0784314, 0.0745098, 0.0745098, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="VBoxContainer" type="GridContainer" parent="ColorRect"]
+margin_left = 768.0
+margin_top = 64.0
+margin_right = 1280.0
+margin_bottom = 597.0
+custom_constants/vseparation = 10
+custom_constants/hseparation = 10
+columns = 2
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameLabel" type="Label" parent="ColorRect/VBoxContainer"]
+margin_right = 256.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 256, 64 )
+text = "Name:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="NameEdit" type="LineEdit" parent="ColorRect/VBoxContainer"]
+margin_left = 266.0
+margin_right = 522.0
+margin_bottom = 64.0
+rect_min_size = Vector2( 256, 64 )
+align = 1
+
+[node name="IPLabel" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 74.0
+margin_right = 256.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 256, 64 )
+text = "IP:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="IPEdit" type="LineEdit" parent="ColorRect/VBoxContainer"]
+margin_left = 266.0
+margin_top = 74.0
+margin_right = 522.0
+margin_bottom = 138.0
+rect_min_size = Vector2( 256, 64 )
+align = 1
+
+[node name="PortLabel" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 148.0
+margin_right = 256.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 256, 64 )
+text = "Port:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PortEdit" type="LineEdit" parent="ColorRect/VBoxContainer"]
+margin_left = 266.0
+margin_top = 148.0
+margin_right = 522.0
+margin_bottom = 212.0
+rect_min_size = Vector2( 256, 64 )
+align = 1
+
+[node name="HostLabel" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 222.0
+margin_right = 256.0
+margin_bottom = 286.0
+rect_min_size = Vector2( 256, 64 )
+text = "Host:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="HostButton" type="Button" parent="ColorRect/VBoxContainer"]
+margin_left = 266.0
+margin_top = 222.0
+margin_right = 522.0
+margin_bottom = 286.0
+text = "Host"
+
+[node name="JoinLabel" type="Label" parent="ColorRect/VBoxContainer"]
+margin_top = 296.0
+margin_right = 256.0
+margin_bottom = 360.0
+rect_min_size = Vector2( 256, 64 )
+text = "Join:"
+align = 2
+valign = 1
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="JoinButton" type="Button" parent="ColorRect/VBoxContainer"]
+margin_left = 266.0
+margin_top = 296.0
+margin_right = 522.0
+margin_bottom = 360.0
+text = "Join"
+
+[node name="WaitingRoom" parent="." instance=ExtResource( 3 )]
+visible = false
+[connection signal="pressed" from="ColorRect/VBoxContainer/HostButton" to="." method="_on_HostButton_pressed"]
+[connection signal="pressed" from="ColorRect/VBoxContainer/JoinButton" to="." method="_on_JoinButton_pressed"]

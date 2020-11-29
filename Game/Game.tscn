@@ -1,0 +1,238 @@
+[gd_scene load_steps=8 format=2]
+
+[ext_resource path="res://Board/Board.tscn" type="PackedScene" id=1]
+[ext_resource path="res://Assetts/Boats/Ships.png" type="Texture" id=2]
+[ext_resource path="res://Assetts/Theme/defaultTheme.tres" type="Theme" id=3]
+[ext_resource path="res://Game/Game.gd" type="Script" id=4]
+[ext_resource path="res://Game/MarkerTileset.tres" type="TileSet" id=5]
+[ext_resource path="res://Game/CursorTileset.tres" type="TileSet" id=6]
+[ext_resource path="res://Game/FireEffects.tscn" type="PackedScene" id=7]
+
+[node name="Game" type="Node2D"]
+script = ExtResource( 4 )
+
+[node name="P1Panel" type="Panel" parent="."]
+margin_top = 256.0
+margin_right = 1024.0
+margin_bottom = 1152.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P1Board" parent="P1Panel" instance=ExtResource( 1 )]
+position = Vector2( 64, 0 )
+
+[node name="P1Markers" type="TileMap" parent="P1Panel"]
+position = Vector2( 128, 64 )
+tile_set = ExtResource( 5 )
+format = 1
+
+[node name="P2Cursor" type="TileMap" parent="P1Panel"]
+position = Vector2( 128, 64 )
+tile_set = ExtResource( 6 )
+format = 1
+
+[node name="P1FireEffects" parent="P1Panel" instance=ExtResource( 7 )]
+position = Vector2( 128, 64 )
+
+[node name="P1CarrierDisplay" type="Sprite" parent="P1Panel"]
+position = Vector2( 832, 128 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 128, 320, 64 )
+
+[node name="P1BattleshipDisplay" type="Sprite" parent="P1Panel"]
+position = Vector2( 960, 128 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 64, 256, 64 )
+
+[node name="P1DestroyerDisplay" type="Sprite" parent="P1Panel"]
+position = Vector2( 832, 512 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 0, 192, 64 )
+
+[node name="P1SubmarineDisplay" type="Sprite" parent="P1Panel"]
+position = Vector2( 960, 512 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 192, 64 )
+
+[node name="P1PatrolBoatDisplay" type="Sprite" parent="P1Panel"]
+position = Vector2( 896, 384 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 64, 128, 64 )
+
+[node name="P2Fire" type="Button" parent="P1Panel"]
+margin_left = 384.0
+margin_top = 768.0
+margin_right = 512.0
+margin_bottom = 832.0
+text = "Fire!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P2Panel" type="Panel" parent="."]
+margin_left = 1024.0
+margin_top = 256.0
+margin_right = 2048.0
+margin_bottom = 1152.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P2Board" parent="P2Panel" instance=ExtResource( 1 )]
+position = Vector2( 64, 0 )
+
+[node name="P2Markers" type="TileMap" parent="P2Panel"]
+position = Vector2( 128, 64 )
+tile_set = ExtResource( 5 )
+format = 1
+
+[node name="P1Cursor" type="TileMap" parent="P2Panel"]
+position = Vector2( 128, 64 )
+tile_set = ExtResource( 6 )
+format = 1
+
+[node name="P2FireEffects" parent="P2Panel" instance=ExtResource( 7 )]
+position = Vector2( 128, 64 )
+
+[node name="P2CarrierDisplay" type="Sprite" parent="P2Panel"]
+position = Vector2( 832, 128 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 128, 320, 64 )
+
+[node name="P2BattleshipDisplay" type="Sprite" parent="P2Panel"]
+position = Vector2( 960, 128 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 128, 64, 256, 64 )
+
+[node name="P2DestroyerDisplay" type="Sprite" parent="P2Panel"]
+position = Vector2( 832, 512 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 192, 0, 192, 64 )
+
+[node name="P2SubmarineDisplay" type="Sprite" parent="P2Panel"]
+position = Vector2( 960, 512 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 0, 192, 64 )
+
+[node name="P2PatrolBoatDisplay" type="Sprite" parent="P2Panel"]
+position = Vector2( 896, 384 )
+rotation = 1.5708
+texture = ExtResource( 2 )
+centered = false
+region_enabled = true
+region_rect = Rect2( 0, 64, 128, 64 )
+
+[node name="P1Fire" type="Button" parent="P2Panel"]
+margin_left = 384.0
+margin_top = 768.0
+margin_right = 512.0
+margin_bottom = 832.0
+text = "Fire!"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ControlPanel" type="Panel" parent="."]
+margin_right = 2048.0
+margin_bottom = 256.0
+theme = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P1NameLabel" type="Label" parent="ControlPanel"]
+margin_left = 320.0
+margin_top = 128.0
+margin_right = 576.0
+margin_bottom = 192.0
+text = "P1 Name"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="P2NameLabel" type="Label" parent="ControlPanel"]
+margin_left = 1344.0
+margin_top = 128.0
+margin_right = 1600.0
+margin_bottom = 192.0
+text = "P1 Name"
+align = 1
+valign = 1
+autowrap = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="TurnLabel" type="Label" parent="ControlPanel"]
+margin_left = 832.0
+margin_top = 64.0
+margin_right = 1216.0
+margin_bottom = 128.0
+align = 1
+valign = 1
+autowrap = true
+
+[node name="TimeLabel" type="Label" parent="ControlPanel"]
+margin_left = 832.0
+margin_top = 128.0
+margin_right = 1216.0
+margin_bottom = 192.0
+align = 1
+valign = 1
+autowrap = true
+
+[node name="Timer" type="Timer" parent="ControlPanel"]
+
+[node name="RestartButton" type="Button" parent="ControlPanel"]
+visible = false
+margin_left = 320.0
+margin_top = 64.0
+margin_right = 576.0
+margin_bottom = 128.0
+text = "Restart"
+
+[node name="BackToLobbyButton" type="Button" parent="ControlPanel"]
+visible = false
+margin_left = 1344.0
+margin_top = 64.0
+margin_right = 1600.0
+margin_bottom = 128.0
+text = "Back To Lobby"
+[connection signal="pressed" from="P1Panel/P2Fire" to="." method="_on_P2Fire_pressed"]
+[connection signal="pressed" from="P2Panel/P1Fire" to="." method="_on_P1Fire_pressed"]
+[connection signal="timeout" from="ControlPanel/Timer" to="." method="_on_Timer_timeout"]
+[connection signal="pressed" from="ControlPanel/RestartButton" to="." method="_on_RestartButton_pressed"]
+[connection signal="pressed" from="ControlPanel/BackToLobbyButton" to="." method="_on_BackToLobbyButton_pressed"]
