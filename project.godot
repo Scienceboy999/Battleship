@@ -21,6 +21,7 @@ run/main_scene="res://Lobby/Lobby.tscn"
 [autoload]
 
 Network="*res://Network/Network.gd"
+Saved="*res://Saved/Saved.gd"
 
 [display]
 
