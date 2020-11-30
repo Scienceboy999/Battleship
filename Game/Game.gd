@@ -309,3 +309,7 @@ func _on_BackToLobbyButton_pressed() -> void:
 
 sync func backToLobby() -> void:
 	get_tree().change_scene("res://Lobby/Lobby.tscn")
+
+
+func _on_SettingsButton_pressed() -> void:
+	$Settings.popup_centered()

@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://Board/Board.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Assetts/Boats/Ships.png" type="Texture" id=2]
@@ -7,6 +7,8 @@
 [ext_resource path="res://Game/MarkerTileset.tres" type="TileSet" id=5]
 [ext_resource path="res://Game/CursorTileset.tres" type="TileSet" id=6]
 [ext_resource path="res://Game/FireEffects.tscn" type="PackedScene" id=7]
+[ext_resource path="res://Assetts/Icons/settingsIcon.png" type="Texture" id=8]
+[ext_resource path="res://Settings/Settings.tscn" type="PackedScene" id=9]
 
 [node name="Game" type="Node2D"]
 script = ExtResource( 4 )
@@ -231,8 +233,22 @@ margin_top = 64.0
 margin_right = 1600.0
 margin_bottom = 128.0
 text = "Back To Lobby"
+
+[node name="SettingsButton" type="Button" parent="."]
+margin_left = 1920.0
+margin_top = 64.0
+margin_right = 1996.0
+margin_bottom = 134.0
+icon = ExtResource( 8 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" parent="." instance=ExtResource( 9 )]
+visible = false
 [connection signal="pressed" from="P1Panel/P2Fire" to="." method="_on_P2Fire_pressed"]
 [connection signal="pressed" from="P2Panel/P1Fire" to="." method="_on_P1Fire_pressed"]
 [connection signal="timeout" from="ControlPanel/Timer" to="." method="_on_Timer_timeout"]
 [connection signal="pressed" from="ControlPanel/RestartButton" to="." method="_on_RestartButton_pressed"]
 [connection signal="pressed" from="ControlPanel/BackToLobbyButton" to="." method="_on_BackToLobbyButton_pressed"]
+[connection signal="pressed" from="SettingsButton" to="." method="_on_SettingsButton_pressed"]

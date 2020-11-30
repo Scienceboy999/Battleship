@@ -19,3 +19,6 @@ func _on_JoinButton_pressed() -> void:
 	Network.selected_PORT = int($ColorRect/VBoxContainer/PortEdit.text)
 	Network.connectToServer($ColorRect/VBoxContainer/NameEdit.text)
 	$WaitingRoom.popup_centered()
+
+func _on_SettingsButton_pressed() -> void:
+	$Settings.popup_centered()

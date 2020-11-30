@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://Assetts/Theme/defaultTheme.tres" type="Theme" id=1]
 [ext_resource path="res://Lobby/WaitingRoom.gd" type="Script" id=2]
+[ext_resource path="res://Assetts/Icons/settingsIcon.png" type="Texture" id=3]
+[ext_resource path="res://Settings/Settings.tscn" type="PackedScene" id=4]
 
 [node name="WaitingRoom" type="Popup" groups=[
 "waitingRoom",
@@ -53,5 +55,18 @@ text = "Start"
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
+[node name="SettingsButton" type="Button" parent="ColorRect"]
+margin_left = 1920.0
+margin_top = 64.0
+margin_right = 1996.0
+margin_bottom = 134.0
+icon = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Settings" parent="ColorRect" instance=ExtResource( 4 )]
 [connection signal="pressed" from="ColorRect/backToLobbyButton" to="." method="_on_backToLobbyButton_pressed"]
 [connection signal="pressed" from="ColorRect/StartButton" to="." method="_on_StartButton_pressed"]
+[connection signal="pressed" from="ColorRect/SettingsButton" to="." method="_on_SettingsButton_pressed"]

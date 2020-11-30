@@ -211,3 +211,6 @@ func _on_DoneButton_pressed() -> void:
 		if child is Button:
 			child.disabled = true
 	Network.finishedPlacing(boats)
+
+func _on_SettingsButton_pressed() -> void:
+	$Settings.popup_centered()
