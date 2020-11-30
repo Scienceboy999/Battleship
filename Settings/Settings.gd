@@ -9,3 +9,7 @@ func _on_DoneButton_pressed() -> void:
 
 func _on_QuitButton_pressed() -> void:
 	get_tree().quit()
+
+func _on_BackToLobbyButton_pressed() -> void:
+	get_tree().change_scene("res://Lobby/Lobby.tscn")
+	Network.peer.close_connection()
