@@ -2,7 +2,14 @@ extends Node
 
 var saveData:Dictionary = {}
 const SAVEGAME:String = "user://Savegame.json"
-const defaultDic:Dictionary = {"playerName":"Unnamed","IP":Network.DEFAULT_IP,"port":Network.DEFAULT_PORT}
+const defaultDic:Dictionary = {
+	"playerName":"Unnamed",
+	"IP":Network.DEFAULT_IP,
+	"port":Network.DEFAULT_PORT,
+	"masterVolume":-20,
+	"sfxVolume":-20
+	}
+
 func _ready() -> void:
 	saveData = getData()
 

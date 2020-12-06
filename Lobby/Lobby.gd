@@ -5,6 +5,8 @@ func _ready() -> void:
 	if OS.has_feature("standalone"):
 		OS.window_fullscreen = true
 		OS.window_borderless = true
+	AudioServer.set_bus_volume_db(0,Saved.saveData["masterVolume"])
+	AudioServer.set_bus_volume_db(1,Saved.saveData["sfxVolume"])
 	$ColorRect/VBoxContainer/NameEdit.text = Saved.saveData["playerName"]
 	$ColorRect/VBoxContainer/IPEdit.text = Saved.saveData["IP"]
 	$ColorRect/VBoxContainer/PortEdit.text = str(Saved.saveData["port"])
