@@ -145,6 +145,7 @@ __meta__ = {
 visible = false
 
 [node name="Settings" parent="." instance=ExtResource( 5 )]
+visible = false
 [connection signal="text_changed" from="ColorRect/VBoxContainer/NameEdit" to="." method="_on_NameEdit_text_changed"]
 [connection signal="text_changed" from="ColorRect/VBoxContainer/IPEdit" to="." method="_on_IPEdit_text_changed"]
 [connection signal="text_changed" from="ColorRect/VBoxContainer/PortEdit" to="." method="_on_PortEdit_text_changed"]
